@@ -14,7 +14,7 @@ const PaginaInicio = () => {
   ///////  Funciones /////////
 
   const traerUsuarios = async () => {
-    await fetch(`${urlServer || "http://localhost:4000/"}/users`, { mode: "cors" })
+    await fetch(`${urlServer || "http://localhost:4000/"}users`, {mode: "no-cors"} )
       .then((response) => response.json())
       .then((data) => {
         setUsurarios(data);
