@@ -10,7 +10,7 @@ app.use(express.json())
 /* app.use(cors()) */
 
 
-/* app.use(express.static(path.join(__dirname, "../frontend","build"))) */
+app.use(express.static(path.join(__dirname, "../frontend","build")))
 
 ///////////////  OBTENER TODOS LOS USUARIOS  /////////////////  
 app.get('/users', async (req, res) => {

@@ -5,7 +5,7 @@ const PaginaInicio = () => {
   const [usuarios, setUsurarios] = useState([]);
   const [estadoDeLaPeticion, setEstadoDeLaPeticion] = useState(false);
 
-  const urlServer = "https://aplicacion-de-notas-mern.vercel.app/"; //"https://aplicacion-de-notas-mern.vercel.app/"
+  const urlServer = "https://aplicacion-de-notas-mern.vercel.app/users"; //"https://aplicacion-de-notas-mern.vercel.app/"
 
   useEffect(() => {
     traerUsuarios();
@@ -14,7 +14,7 @@ const PaginaInicio = () => {
   ///////  Funciones /////////
 
   const traerUsuarios = async () => {
-    await fetch(`${urlServer || "http://localhost:4000/"}users`, {mode: "no-cors"} )
+    await fetch( urlServer, {mode: "no-cors"} )
       .then((response) => response.json())
       .then((data) => {
         setUsurarios(data);
