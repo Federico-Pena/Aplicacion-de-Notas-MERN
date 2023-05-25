@@ -7,26 +7,29 @@ const port = process.env.PORT || 4000
 const UserSchema = require("./models/UserSchema")
 const  NotasSchema = require( "./models/NotasSchema");
 app.use(express.json())
-/* app.use(cors()) */
+app.use(cors({
+  "Access-Control-Allow-Origin":"*"
+}))
+
 
 
 app.use(express.static(path.join(__dirname, "../frontend","build")))
 
 ///////////////  OBTENER TODOS LOS USUARIOS  /////////////////  
-app.get('/users', async (req, res) => {
+app.get('/usuarios', async (req, res) => {
 await UserSchema.find()
 .then(data => {
-  res.send(data)})
+  res.json(data)})
 })
 ///////////////  OBTENER UN LOS USUARIO  ///////////////// 
-app.get('/users/:id',async (req, res) => {
+app.get('/usuarios/:id',async (req, res) => {
   await UserSchema.findById(req.params.id)
   .then(data => {
     res.send(data)})
   })
 
   ///////////////  GUARDAR UN LOS USUARIOS  ///////////////// 
-app.post("/users", async (req, res) => {
+app.post("/usuarios", async (req, res) => {
   const {nombre, autor, titulo, contenido} = req.body
   let user = new UserSchema({nombre:nombre, notas: []})
   await user.save().then(() => {
@@ -34,7 +37,7 @@ app.post("/users", async (req, res) => {
   })
 })
 ///////////////  ELIMINAR UN LOS USUARIOS  ///////////////// 
-app.delete("/users/:id", async (req, res) => {
+app.delete("/usuarios/:id", async (req, res) => {
 await UserSchema.findByIdAndDelete(req.params.id).then(() => {
   res.send().status(200)
 }) 
@@ -42,7 +45,7 @@ await UserSchema.findByIdAndDelete(req.params.id).then(() => {
 
 
 
-app.put("/users/:id", async (req, res) => {
+app.put("/usuarios/:id", async (req, res) => {
   const {nombre, autor, titulo, contenido} = req.body
   await UserSchema.findByIdAndUpdate(req.params.id, {nombre:nombre, notas: []}).then(() => {
     res.send().status(200)

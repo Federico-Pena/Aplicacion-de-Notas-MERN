@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
+import useFetch from "react-fetch-hook";
 
 const PaginaInicio = () => {
   //////// Estados////////
   const [usuarios, setUsurarios] = useState([]);
   const [estadoDeLaPeticion, setEstadoDeLaPeticion] = useState(false);
 
-  const urlServer = "https://aplicacion-de-notas-mern.vercel.app/users"; //"https://aplicacion-de-notas-mern.vercel.app/"
+  const urlServer = "http://localhost:4000/usuarios"; //"https://aplicacion-de-notas-mern.vercel.app/usuarios" //http://localhost:4000/usuarios
 
+  const { isLoading, data } = useFetch(urlServer);
+
+console.log(isLoading, data);
+  
   useEffect(() => {
-    traerUsuarios();
-  }, [estadoDeLaPeticion]);
+    setUsurarios(data);
+    setEstadoDeLaPeticion(true)
+  }, [isLoading]);
 
   ///////  Funciones /////////
 
-  const traerUsuarios = async () => {
-    await fetch( urlServer, {mode: "no-cors"} )
+ /*  const traerUsuarios = async () => {
+    await fetch("https://aplicacion-de-notas-mern.vercel.app/users")
       .then((response) => response.json())
       .then((data) => {
         setUsurarios(data);
       })
       .finally(() => setEstadoDeLaPeticion(true));
-  };
+  }; */
 
   return (
     <>
