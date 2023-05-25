@@ -1,0 +1,26 @@
+.header{
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.ul{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ul img{
+  width: 2rem;
+  cursor: pointer;
+}
+
+
+
+button{
+  cursor: pointer;
+}
+
+.li a{
+  background-color: red;
+}

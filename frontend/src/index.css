@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: #303030;
+  color:rgb(226, 226, 226);
+  width: 100%;
+  min-height: 100vh;
+}
+
+
