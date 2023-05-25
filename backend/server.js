@@ -7,7 +7,12 @@ const port = process.env.PORT || 4000
 const UserSchema = require("./models/UserSchema")
 const  NotasSchema = require( "./models/NotasSchema");
 app.use(express.json())
-app.use(cors({origin:"http://localhost:4000/usuarios"}))
+app.use(cors({
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}))
 
 
 
