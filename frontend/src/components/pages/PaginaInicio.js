@@ -6,7 +6,7 @@ const PaginaInicio = () => {
   const [usuarios, setUsurarios] = useState([]);
   const [estadoDeLaPeticion, setEstadoDeLaPeticion] = useState(false);
 
-  const urlServer = "https://aplicacion-de-notas-mern.vercel.app/usuarios"; //"https://aplicacion-de-notas-mern.vercel.app/usuarios" //http://localhost:4000/usuarios
+  const urlServer = "/usuarios"; //"https://aplicacion-de-notas-mern.vercel.app/usuarios" //http://localhost:4000/usuarios
 
   const { isLoading, data } = useFetch(urlServer);
 
