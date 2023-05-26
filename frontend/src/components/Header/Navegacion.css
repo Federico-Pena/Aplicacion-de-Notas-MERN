@@ -24,3 +24,7 @@ button{
 .li a{
   background-color: red;
 }
+
+.hidden{
+  display: none;
+}

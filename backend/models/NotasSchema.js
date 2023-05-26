@@ -8,5 +8,9 @@ const NotasSchema = new Schema({
   type: Date,
   default: Date.now,
   },
+  meGusta: {
+    type:Number,
+    default: 0
+  },
 });
 module.exports = mongoose.model("notas", NotasSchema);

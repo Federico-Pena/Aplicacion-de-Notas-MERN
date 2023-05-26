@@ -1,0 +1,17 @@
+.usuario{
+  border: 1px solid white;
+  display: flex;
+  border-radius: .5rem;
+  min-height: 5rem;
+  max-width: 600;
+  margin-top: 1rem;
+}
+
+.usuario img{
+  width: 3rem;
+  height: 3rem;
+}
+
+.hidden{
+  display: none;
+}

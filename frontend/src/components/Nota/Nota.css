@@ -1,0 +1,9 @@
+.nota{
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+.nota img{
+  width: 5rem;
+  border-radius: 50%;
+}
