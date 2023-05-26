@@ -21,7 +21,7 @@ const Navegacion = () => {
           <li><Link  style={link} to={"/"}>Inicio</Link> </li>
           {isAuthenticated &&(
             <>
-            <li><Link style={link} to={"/usuarios"}>Usuarios</Link></li>
+            <li><Link style={link} to={"/users"}>Usuarios</Link></li>
             <li><Button nombre={"Cerrar Sesion"} funcion={logout} /></li>
             </>
           )}
