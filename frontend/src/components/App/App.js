@@ -13,7 +13,7 @@ function App() {
       <Navegacion />
         <Routes>
           <Route index  element={<PaginaInicio />} />
-          <Route path="usuarios" element={<PaginaUsuarios />} />
+          <Route path="users" element={<PaginaUsuarios />} />
         </Routes>
       </BrowserRouter>
     </div>
